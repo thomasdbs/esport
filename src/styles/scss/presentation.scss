@@ -1,0 +1,75 @@
+.presentation {
+
+  div {
+    position: relative;
+    padding: 0 200px;
+
+    svg {
+      position: absolute;
+      transform: scale(0);
+      transition: transform 0.5s $easeInOutExpo;
+
+      &.animated {
+        transform: scale(1);
+      }
+
+      &.circle {
+        top: 5px;
+        left: 20px;
+        width: 51px;
+      }
+
+      &.triangle-1 {
+        top: 100px;
+        right: 20px;
+        width: 48px;
+        transform: scale(0) rotate(-130deg);
+        fill:$yellow !important;
+
+        &.animated {
+          transform: scale(1) rotate(-130deg);
+        }
+
+      }
+
+      &.alien {
+        left: 0;
+        width: 95px;
+      }
+
+      &.ghost {
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 77px;
+      }
+
+      &.triangle-2 {
+        bottom: -100px;
+        left: 100px;
+        width: 50px;
+      }
+
+      &.carre {
+        right: 80px;
+        bottom: -50px;
+      }
+
+    }
+
+  }
+
+  p {
+    @extend .white;
+    // font-size: 16px;
+    font-size: 14px;
+    width: 600px;
+    text-align: center;
+    line-height: 26px;
+    letter-spacing: 1px;
+    font-family: 'Open Sans';
+  }
+
+}

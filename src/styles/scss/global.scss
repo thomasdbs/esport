@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  outline: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $yellow;
+  border-radius: 6px;
+  border: 1px solid $yellow;
+  padding: 6px 8px;
+  transition: all 0.5s $easeInOutExpo;
+
+  &:hover {
+    background-color: $yellow;
+    color: $blue;
+  }
+
+}
+
+h1 {
+  color: $green;
+  // font-size: 70px;
+  font-size: 60px;
+  letter-spacing: 4.2px;
+  font-family: 'Oswald';
+  width: 500px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Oswald';
+  color: $green;
+  text-align: center;
+  font-size: 50px;
+  // font-size: 40px;
+  letter-spacing: 3px;
+  width: 700px;
+
+  span {
+    display: block;
+    font-size: 35px;
+    @extend .white;
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  width: 100%;
+  transition: opacity 1s, transform 1s;
+
+  &.invisible {
+    opacity: 0.3 !important;
+    transform: scale(0.7) !important;
+  }
+
+}
+
+.track-visibility {
+
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  transition: opacity 1s, transform 1s;
+
+  &.invisible {
+    opacity: 0.3 !important;
+    transform: scale(0.7) !important;
+  }
+
+}
+
+.fullscreen {
+  min-height: 100vh;
+}
+
+.white {
+  color: $white;
+}
+
+.btn-anim {
+  display:inline-block;
+  cursor: pointer;
+  text-decoration:none;
+  position:relative;
+  transition:all 0.7s $easeInOutExpo;
+  background: none;
+  border: none;
+  padding: 0;
+  padding-bottom: 5px;
+
+  &.active {
+
+    &::before {
+      width:calc(100% + 40px);
+    }
+
+  }
+
+
+  &:hover {
+
+    &::before {
+      animation: draw 0.5s forwards;
+    }
+
+    @keyframes draw {
+      from {
+        width:0;
+      }
+      to {
+        width:calc(100% + 40px);
+      }
+    }
+
+  }
+
+  &::before {
+    content:" ";
+    display:block;
+    position:absolute;
+    bottom:50%;
+    width:0%;
+    left:-20px;
+    margin:0 auto;
+    transition:all 0.7s $easeInOutExpo;
+  }
+
+}
+
+.tracker {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

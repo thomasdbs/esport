@@ -1,0 +1,47 @@
+.player-1 {
+
+  .btn-anim {
+
+    &:hover {
+
+      &::before {
+        border-bottom:solid 4px $yellow;
+      }
+
+    }
+
+    &::before {
+      border-bottom:solid 4px $yellow;
+    }
+
+  }
+
+  &.answer-1 .player {
+    color: $yellow;
+  }
+
+}
+
+.player-2 {
+
+  .btn-anim {
+
+    &:hover {
+
+      &::before {
+        border-bottom:solid 4px $blue;
+      }
+
+    }
+
+    &::before {
+      border-bottom:solid 4px $blue;
+    }
+
+  }
+
+  &.answer-1 .player {
+    color: $blue;
+  }
+
+}
