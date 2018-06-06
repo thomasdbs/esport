@@ -184,6 +184,7 @@
         color: $white;
         font-family: 'Oswald';
         overflow: hidden;
+        cursor: pointer;
 
         &[data-choice="1"] {
           background: $red;
@@ -268,5 +269,71 @@
     }
 
   }
+
+}
+
+
+.question-5 {
+
+  > p {
+
+    font-family: 'Open Sans';
+    text-align: center;
+    font-size: 35px;
+    line-height: 34px;
+    margin: 0 0 30px 0;
+    color:$green;
+
+    &.small {
+      font-size: 12px;
+      line-height: 16px;
+      color: $white;
+      max-width: 400px;
+    }
+
+  }
+
+  .choice {
+    max-width: 500px;
+
+    div {
+
+      max-width: 140px;
+      cursor: pointer;
+      flex-direction: column;
+      text-align: center;
+      color: $white;
+      transition: color 0.3s $easeInOutExpo, transform 0.8s $easeInOutExpo, opacity 0.8s $easeInOutExpo;
+      transform: translateX(200%);
+      opacity: 0;
+
+      &.appear {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      svg {
+        fill: $white;
+        transition: fill 0.3s $easeInOutExpo, transform 0.8s $easeInOutExpo, opacity 0.8s $easeInOutExpo;
+      }
+
+      &:hover, &.active {
+        color: $green;
+
+        svg {
+          fill:$green;
+        }
+      }
+
+      p {
+        font-size: 25px;
+        line-height: 39px;
+        font-family: 'Oswald';
+      }
+
+    }
+
+  }
+
 
 }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Tour from '../../dom/svg/Tour'
+import ASport from '../../dom/svg/ASport'
+import NotASport from '../../dom/svg/NotASport'
 
 class Choices extends Component {
 
@@ -82,7 +84,7 @@ class Choices extends Component {
             <p>La population de la France</p>
             <p>68 MILLIONS</p>
           </div>
-          :
+          : (question === '4') ?
           <div className={ (active === true) ? 'animation appear active' : ''}>
             <img src={require('../../../img/photo_ronaldo.png')} alt=""/>
             <p>CRISTIANO RONALDO</p>
@@ -93,6 +95,11 @@ class Choices extends Component {
               <option selected={(one === 3) ? true : false} value="3">3</option>
               <option selected={(one === 4) ? true : false} value="4">4</option>
             </select>
+          </div>
+          :
+          <div onClick={() => goToAnswer(1)} data-choice="1" className={ (active === 1) ? 'animation appear active' : 'animation appear'} >
+            <ASport />
+            <p>OUI</p>
           </div>
         }
         {
@@ -110,7 +117,7 @@ class Choices extends Component {
             <p>La population des Etats-Unis</p>
             <p>325 MILLIONS</p>
           </div>
-          :
+          : (question === '4') ?
           <div className={ (active === true) ? 'animation appear active' : ''}>
             <img src={require('../../../img/photo_ninja.png')} alt=""/>
             <p>NINJA</p>
@@ -121,6 +128,11 @@ class Choices extends Component {
               <option selected={(two === 3) ? true : false} value="3">3</option>
               <option selected={(two === 4) ? true : false} value="4">4</option>
             </select>
+          </div>
+          :
+          <div onClick={() => goToAnswer(2)} data-choice="2" className={ (active === 2) ? 'animation appear active' : 'animation appear'} >
+            <NotASport />
+            <p>NON</p>
           </div>
         }
         {
@@ -138,7 +150,7 @@ class Choices extends Component {
             <p>La population de la Chine</p>
             <p>1,4 MILLIARDS</p>
           </div>
-          :
+          : (question === '4') && (
           <div className={ (active === true) ? 'animation appear active' : ''}>
             <img src={require('../../../img/photo_riner.png')} alt=""/>
             <p>TEDDY RINER</p>
@@ -149,7 +161,7 @@ class Choices extends Component {
               <option selected={(three === 3) ? true : false} value="3">3</option>
               <option selected={(three === 4) ? true : false} value="4">4</option>
             </select>
-          </div>
+          </div> )
         }
 
         {

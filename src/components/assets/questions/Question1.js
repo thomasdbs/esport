@@ -19,7 +19,7 @@ class Question1 extends Component {
       dom_choice.style.transform=`translateX(${translationX}px)`
 
       setTimeout( () => {
-        dom_choice.style.transform=`translate(${translationX}px,200px)`
+        dom_choice.style.transform=`translate(${translationX}px,300px)`
       }, 700)
 
       setTimeout( () => {

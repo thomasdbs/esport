@@ -8,11 +8,13 @@ import Question1 from '../assets/questions/Question1'
 import Question2 from '../assets/questions/Question2'
 import Question3 from '../assets/questions/Question3'
 import Question4 from '../assets/questions/Question4'
+import Question5 from '../assets/questions/Question5'
 
 import Answer1 from '../assets/answers/Answer1'
 import Answer2 from '../assets/answers/Answer2'
 import Answer3 from '../assets/answers/Answer3'
 import Answer4 from '../assets/answers/Answer4'
+import Answer5 from '../assets/answers/Answer5'
 
 class HOME extends Component {
 
@@ -21,7 +23,8 @@ class HOME extends Component {
     player:null,
     complete_stadium:null,
     gamers_in_world:null,
-    best_salary:null
+    best_salary:null,
+    is_videogames_sport:null
   }
 
   componentWillMount() {
@@ -30,10 +33,12 @@ class HOME extends Component {
     //   player:1
     // })
     // this.setState({
-    //   step:3,
+    //   step:5,
     //   player:1,
     //   complete_stadium:1,
     //   gamers_in_world:2,
+    //   best_salary:[1,2,3,4],
+    //   is_videogames_sport:1
     // })
   }
 
@@ -61,6 +66,10 @@ class HOME extends Component {
         this.setState({ best_salary: choice })
         break;
 
+        case 5:
+        this.setState({ is_videogames_sport: choice })
+        break;
+
       }
 
       this.setState({ step:question })
@@ -71,7 +80,7 @@ class HOME extends Component {
 
   render() {
 
-    const { step, player, complete_stadium, gamers_in_world, best_salary } = this.state
+    const { step, player, complete_stadium, gamers_in_world, best_salary, is_videogames_sport } = this.state
 
     return (
 
@@ -109,6 +118,14 @@ class HOME extends Component {
 
         {(step >= 4) && (
           <Answer4 player={player} best_salary={best_salary} />
+        )}
+
+        {(step >= 4) && (
+          <Question5 showAnswer={this.showAnswer} player={player} is_videogames_sport={is_videogames_sport} />
+        )}
+
+        {(step >= 5) && (
+          <Answer5 player={player} is_videogames_sport={is_videogames_sport} />
         )}
 
       </Container>
