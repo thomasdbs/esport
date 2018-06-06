@@ -611,13 +611,13 @@ class Bloc extends Component {
 
                       <Heart />
                       <Heart />
-                      <Heart />
-                      <Heart />
-                      <Heart />
-                      <Heart />
+                      <Heart className="mute" />
+                      <Heart className="mute" />
+                      <Heart className="mute" />
+                      <Heart className="mute" />
 
-                      <Heart />
-                      <Heart />
+                      <Heart className="mute" />
+                      <Heart className="mute" />
                       <Heart className="mute" />
                       <Heart className="mute" />
                       <Heart className="mute" />

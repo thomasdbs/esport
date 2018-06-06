@@ -38,7 +38,7 @@ class Choices extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { one, two, three, four, active } = this.props
-    if (one && two && three && four) {
+    if (one && two && three && four && one !== this.state.one && two !== this.state.two && three !== this.state.three && four !== this.state.four) {
       this.setState({ one, two, three, four })
     }
   }
